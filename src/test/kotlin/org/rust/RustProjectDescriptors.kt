@@ -113,7 +113,7 @@ open class WithCustomStdlibRustProjectDescriptor(
     }
 
     override val skipTestReason: String? get() {
-        if (stdlib == null) return "No stdlib"
+        if (stdlib == null) error("stdlib is null")//return "No stdlib"
         return delegate.skipTestReason
     }
 
