@@ -34,7 +34,7 @@ before_script:
   - ./gradlew assemble testClasses -Pkotlin.incremental=false --no-daemon
 
 script:
-  - travis_wait ./gradlew check -Pkotlin.incremental=false --no-daemon
+  - travis_wait ./gradlew test --tests "org.rust.lang.core.resolve.RsStdlibResolveTest.test path to stdlib contains symlink" -Pkotlin.incremental=false --no-daemon
 
 # https://docs.travis-ci.com/user/languages/java/#Caching
 before_cache:
